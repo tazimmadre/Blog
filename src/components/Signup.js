@@ -2,6 +2,8 @@ import React,{useState} from "react";
 import useToken from "../utils/useToken";
 import { useNavigate } from "react-router-dom";
 import witter from "../apis/witter";
+import SimpleReactValidator from "simple-react-validator";
+import swal from "sweetalert";
 const Signup = () => {
   let navigate = useNavigate();
   const [credentials, setCredentials] = useState({
@@ -14,27 +16,33 @@ const Signup = () => {
   });
   const { token, setToken } = useToken();
   const [namee, setNamee] = useState(false);
-
+  const validator= new SimpleReactValidator();
   const changeHandler = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
     setCredentials({ ...credentials, [name]: value });
   };
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
     e.preventDefault();
     setNamee(true);
+    
     witter.post("/register", { ...credentials },{
         headers: {
           Authorization: `Bearer ${token?.token}`,
         }
       })
     .then((response) => {
-        console.log(response);
-        navigate("/signin");
-      })
-      .catch((err) => {
-        console.log(err);
-        setNamee(false);
+      swal({
+      title: "Good job!",
+      text: "SignUp Successfull!",
+      icon: "success",
+    }).then(()=>{
+      console.log(response);
+      navigate("/signin");
+            })
+    }).catch((err) => {
+      swal("Oops!", "Something went wrong!", "error");
+      setNamee(false);
       });
     };
   return (
@@ -48,9 +56,11 @@ const Signup = () => {
               type="text"
               name="firstName"
               onChange={changeHandler}
+              value={credentials.firstName}
               placeholder="Alex" 
               required
             />
+            {validator.message('name',credentials.firstName,'required|min:5|max:7')}
           </div>
         </div>
         <div class="field">

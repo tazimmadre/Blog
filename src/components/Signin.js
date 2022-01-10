@@ -14,7 +14,7 @@ const Signin = () => {
     const { name, value } = e.target;
     setCredentials({ ...credentials, [name]: value });
   }
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     setNamee(true);
     witter.post("/login", { ...credentials })
