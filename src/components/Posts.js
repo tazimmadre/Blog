@@ -54,7 +54,7 @@ const Posts = ({ posts, setStatus, status }) => {
             <div class="media-content">
               <div class="content">
                 <p>
-                  <strong>John Smith</strong> <small>@johnsmith</small>{" "}
+                  <strong>{x.author}</strong> {" "}
                   <small>{"2 hrs ago"}</small>
                   <br />
                   {x.message}

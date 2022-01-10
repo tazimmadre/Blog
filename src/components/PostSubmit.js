@@ -25,6 +25,7 @@ const handleSubmit = (e) => {
     )
     .then((response) => {
       setStatus(!status);
+      setMessage({message:''})
       setNamee(false);
       // window.location.reload();
     })
@@ -46,6 +47,7 @@ const handleSubmit = (e) => {
             <textarea
               class="textarea"
               name="message"
+              value={message.message}
               onChange={changeHandler}
               placeholder="What's happening?"
             ></textarea>

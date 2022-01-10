@@ -73,3 +73,9 @@ a:hover {
   text-decoration: underline;
   cursor: pointer;
 }
+.main-div{
+  display: flex;
+}
+.sidebar{
+  height: -webkit-fill-available;
+}
