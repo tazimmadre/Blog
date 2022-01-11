@@ -16,7 +16,9 @@ const Hero = () => {
         <h1 className={styles.heading2Xl}>
           This is Witter APP join now by Loggin in or{" "}
         </h1>
-        <h1 className={styles.heading2Xl}>SignUP now</h1>
+        <h1 className={styles.heading2Xl}>
+          <Link to="/signup">SignUP now</Link>
+        </h1>
       </div>
     </div>
   );
