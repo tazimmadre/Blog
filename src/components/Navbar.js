@@ -12,10 +12,12 @@ const Navbar = () => {
     if (!token) {
       return (
         <>
-          <Link to="/signup" class="button is-primary">
+          <Link to="/signup" class="button is-primary button-s">
+            <i class="fas fa-user-plus"></i>
             <strong>Sign up</strong>
           </Link>
-          <Link to="/signin" class="button is-light">
+          <Link to="/signin" class="button is-light button-s">
+            <i class="fas fa-sign-in-alt"></i>
             Log in
           </Link>
         </>
@@ -24,7 +26,7 @@ const Navbar = () => {
       return (
         <>
           <Link to="/" className="button is-danger" onClick={signoutHandler}>
-            Sign Out
+            <i class="fas fa-sign-out-alt"></i> Sign Out{" "}
           </Link>
         </>
       );

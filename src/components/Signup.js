@@ -57,10 +57,14 @@ const Signup = () => {
               name="firstName"
               onChange={changeHandler}
               value={credentials.firstName}
-              placeholder="Alex" 
+              placeholder="Alex"
               required
             />
-            {validator.message('name',credentials.firstName,'required|min:5|max:7')}
+            {validator.message(
+              "name",
+              credentials.firstName,
+              "required|min:5|max:7"
+            )}
           </div>
         </div>
         <div class="field">
@@ -126,8 +130,8 @@ const Signup = () => {
             <button
               class={
                 namee
-                  ? "button button-signin is-primary control is-medium is-loading"
-                  : " button button-signin is-primary"
+                  ? "button button-signin is-primary control is-medium is-loading button-s"
+                  : " button button-signin is-primary button-s"
               }
               type="submit"
             >

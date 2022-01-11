@@ -15,6 +15,10 @@ body {
   width: -webkit-fill-available !important;
   margin: 0 auto 0 auto ;
 }
+.button-s{
+  border:0.105rem solid #2c292c !important;
+  box-shadow: 0 0.375em 0 #2c2929 !important;
+}
 .nun{
   display: none;
 }

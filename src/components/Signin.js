@@ -64,8 +64,8 @@ const Signin = () => {
           <button
             class={
               namee
-                ? "button button-signin spacing is-primary control is-medium is-loading"
-                : " button button-signin spacing is-primary"
+                ? "button button-signin spacing is-primary button-s control is-medium is-loading"
+                : " button button-signin spacing is-primary button-s"
             }
             onClick={handleSubmit}
             type="submit"
@@ -76,7 +76,7 @@ const Signin = () => {
       </div>
       <div className="field">
         <div className="control">
-          <Link to="/" className={`button button-signin spacing is-light`}>
+          <Link to="/" className={`button button-signin spacing is-light `}>
             Forgot Password?
           </Link>
         </div>
