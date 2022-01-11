@@ -6,7 +6,7 @@ body {
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
-
+  box-sizing: border-box;
   background: linear-gradient( 
 90deg
 , rgb(116, 28, 179) 0%, rgb(0, 113, 179) 100%);
@@ -23,7 +23,7 @@ body {
   display: none;
 }
 * {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 .block:not(:last-child) {
   margin-bottom: 1.5rem;
@@ -50,6 +50,13 @@ body {
 .posts{
   width: 50%;
   margin: auto;
+  margin-top: 5px;
+}
+.box-home{
+  box-shadow: none;
+  margin-top: 5px !important;
+  border-radius: unset;
+  margin: 1px;
 }
 .textarea{
   border-color: white;
@@ -64,6 +71,7 @@ padding: 10px !important;
 }
 input {
   border: 4px solid #999;
+  box-shadow:1px 1px #2c292c !important;
   padding: 1px auto;
   margin:1px auto ;
   width:50%;

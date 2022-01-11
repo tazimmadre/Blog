@@ -1,39 +1,39 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import useToken from "../utils/useToken";
 import witter from "../apis/witter";
-const PostSubmit=({setMessage,message,setStatus,status})=>{
-  const {token} =useToken();
+const PostSubmit = ({ setMessage, message, setStatus, status }) => {
+  const { token } = useToken();
   const [namee, setNamee] = useState(false);
-    const changeHandler = (e) => {
+  const changeHandler = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
     setMessage({ ...message, [name]: value });
   };
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  setNamee(true);
-  witter
-    .post(
-      "/post",
-      { ...message },
-      {
-        headers: {
-          Authorization: `Bearer ${token?.token}`,
-        },
-      }
-    )
-    .then((response) => {
-      setStatus(!status);
-      setMessage({message:''})
-      setNamee(false);
-      // window.location.reload();
-    })
-    .catch((err) => {
-      console.log(err);
-      setNamee(false);
-    });
-};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setNamee(true);
+    witter
+      .post(
+        "/post",
+        { ...message },
+        {
+          headers: {
+            Authorization: `Bearer ${token?.token}`,
+          },
+        }
+      )
+      .then((response) => {
+        setStatus(!status);
+        setMessage({ message: "" });
+        setNamee(false);
+        // window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+        setNamee(false);
+      });
+  };
   return (
     <article class="media">
       <figure class="media-left">
@@ -72,7 +72,6 @@ const handleSubmit = (e) => {
       </div>
     </article>
   );
-}
-
+};
 
 export default PostSubmit;

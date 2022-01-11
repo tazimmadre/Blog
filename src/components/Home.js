@@ -25,13 +25,13 @@ const Home=()=>{
       });
   },[status]);
   const renderdata=()=>{
-  if(token){
+  if(token && token.token){
     return (
       <div className="main-div">
-        <div className="box sidebar">
+        <div className="box sidebar box-home">
           <Sidebar />
         </div>
-        <div className="box posts right-bar">
+        <div className="box posts right-bar sidebar box-home">
           <PostSubmit
             setMessage={setMessage}
             setStatus={setStatus}
@@ -44,13 +44,14 @@ const Home=()=>{
             <Skeleton count={20} />
           )}
         </div>
-        <div className="box sidebar">
+        <div className="box sidebar box-home">
           <Sidebar />
         </div>
       </div>
     );
   }
   else{
+    console.log(token);
     return <Hero />;
   }};
   return(<>
